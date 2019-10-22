@@ -14,7 +14,7 @@
             "type": "java",
             "name": "Debug (Launch)-Servidor<Servidor_HelloWorld>",
             "request": "launch",
-            "mainClass": "HelloWorld.Servidor",
+            "mainClass": "Servidor.Servidor",
             "projectName": "Servidor_HelloWorld"
         }
     ]

@@ -12,12 +12,13 @@ public class Servidor {
         
         AgenciaImpl agencia = new AgenciaImpl();
 
-        CandidatoImpl candidato = new CandidatoImpl();
+        Base base = new Base();
+        CandidatoImpl candidato = new CandidatoImpl(base);
 
         referenciaServicoNomes.bind("candidato", candidato);
 
         referenciaServicoNomes.bind("agencia", agencia);
-        
+
         System.out.println("Server Running...");
     }
 }

@@ -1,23 +1,29 @@
 package Objects;
 
-public class Vaga {
+import java.io.Serializable;
+
+public class Vaga implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
     private String empresa;
     private String contato;
     private String area;
     private int cargaHoraria;
     private int salario;
 
-    public Vaga(){  }
+    public Vaga() {
+    }
 
-    public Vaga(String empresa, String contato, String area, int cargaHoraria, int salario){
+    public Vaga(String empresa, String contato, String area, int cargaHoraria, int salario) {
         this.empresa = empresa;
         this.contato = contato;
         this.area = area;
         this.cargaHoraria = cargaHoraria;
         this.salario = salario;
     }
-    
-    //#region Getters and Setters
+
+    // #region Getters and Setters
     public int getSalario() {
         return salario;
     }
@@ -58,6 +64,6 @@ public class Vaga {
         this.empresa = empresa;
     }
 
-    //#endregion
-    
+    // #endregion
+
 }

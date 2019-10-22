@@ -1,33 +1,44 @@
 package Servidor;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import Objects.Curriculo;
 import Objects.Vaga;
 
 public class Base {
-    private static List<Curriculo> curriculos;
-    private static List<Vaga> vagas;
+    private ArrayList<Curriculo> curriculos;
+    private ArrayList<Vaga> vagas;
 
-    public Base(){  }
-
-    public static void addCuriculo(Curriculo curriculo){
-        curriculos.add(curriculo);
+    public Base() {
+        this.curriculos = new ArrayList<>();
+        this.vagas = new ArrayList<Vaga>();
     }
 
-    public static void removeCuriculo(Curriculo curriculo){
-        curriculos.remove(curriculo);
+    public void addCuriculo(Curriculo curriculo) {
+        this.curriculos.add(curriculo);
     }
 
-    public static void addVaga(Vaga vaga){
-        vagas.add(vaga);
+    public void removeCuriculo(Curriculo curriculo) {
+        this.curriculos.remove(curriculo);
     }
 
-    public static void removeVaga(Vaga vaga){
-        vagas.remove(vaga);
+    public void addVaga(Vaga vaga) {
+        this.vagas.add(vaga);
     }
 
-    //#region Getters and Setters
-   
-    //#endregion
+    public void removeVaga(Vaga vaga) {
+        this.vagas.remove(vaga);
+    }
+
+    public String listVagas() {
+        return this.vagas.toString();
+    }
+
+    public String listCurriculos() {
+        return this.curriculos.toString();
+    }
+
+    // #region Getters and Setters
+
+    // #endregion
 }

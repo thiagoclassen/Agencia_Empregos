@@ -7,15 +7,16 @@ import Interfaces.InterfaceCandidato;
 import Interfaces.InterfaceCli;
 import Objects.Curriculo;
 import Objects.Vaga;
-import Servidor.Base;
 
 public class CandidatoImpl extends UnicastRemoteObject implements InterfaceCandidato {
     
     private static final long serialVersionUID = 2241569544740392197L;
 
-    protected CandidatoImpl() throws RemoteException {
+    private Base base;
+
+    protected CandidatoImpl(Base base) throws RemoteException {
         super();
-        // TODO Auto-generated constructor stub
+        this.base = base;
     }
 
     @Override
@@ -26,7 +27,9 @@ public class CandidatoImpl extends UnicastRemoteObject implements InterfaceCandi
 
     @Override
     public void cadastroCurriculo(InterfaceCli referenciaCli, Curriculo curriculo) throws RemoteException {
-        Base.addCuriculo(curriculo);
+        this.base.addCuriculo(curriculo);
+        System.out.println("Curriculo cadastrado");
+        referenciaCli.echo("Curriculo cadastrado:" + this.base.listCurriculos() );
     }
 
     @Override
