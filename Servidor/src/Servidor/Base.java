@@ -38,6 +38,26 @@ public class Base {
         return this.curriculos.toString();
     }
 
+    public ArrayList<Vaga> consultaVaga(Vaga vaga) {
+        ArrayList<Vaga> temp = new ArrayList<>();
+        this.vagas.forEach((oferta) -> {
+            if (oferta.getArea().equalsIgnoreCase(vaga.getArea()) && oferta.getSalario() >= vaga.getSalario())
+                temp.add(vaga);
+        });
+
+        return temp;
+    }
+
+    public ArrayList<Curriculo> consultaCurriculo(String area) {
+        ArrayList<Curriculo> temp = new ArrayList<>();
+        this.curriculos.forEach((curriculo) -> {
+            if (curriculo.getArea().equalsIgnoreCase(area))
+                temp.add(curriculo);
+        });
+
+        return temp;
+    }
+
     // #region Getters and Setters
 
     // #endregion

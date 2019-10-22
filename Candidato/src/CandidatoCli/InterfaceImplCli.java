@@ -19,4 +19,6 @@ public class InterfaceImplCli extends UnicastRemoteObject implements InterfaceCl
         System.out.println("Resposta Recebida:" + msg);
     }
 
+    
+
 }
