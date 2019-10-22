@@ -12,10 +12,10 @@
         },
         {
             "type": "java",
-            "name": "Debug (Launch)-Servidor<Servidor_HelloWorld>",
+            "name": "Debug (Launch)-CandidatoCli<Servidor_Candidato>",
             "request": "launch",
-            "mainClass": "HelloWorld.Servidor",
-            "projectName": "Servidor_HelloWorld"
+            "mainClass": "CandidatoCli.CandidatoCli",
+            "projectName": "Servidor_Candidato"
         }
     ]
 }

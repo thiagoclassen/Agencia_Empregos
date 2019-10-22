@@ -1,6 +1,11 @@
 package Objects;
 
-public class Curriculo{
+import java.io.Serializable;
+
+public class Curriculo implements Serializable{
+    
+    private static final long serialVersionUID = 1L;
+
     private String nome;
     private String contato;
     private String area;
