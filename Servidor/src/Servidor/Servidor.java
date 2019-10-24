@@ -10,10 +10,11 @@ public class Servidor {
         
         Registry referenciaServicoNomes = LocateRegistry.createRegistry(1337);
         
-        AgenciaImpl agencia = new AgenciaImpl();
-
         Base base = new Base();
+
         CandidatoImpl candidato = new CandidatoImpl(base);
+        
+        AgenciaImpl agencia = new AgenciaImpl(base);
 
         referenciaServicoNomes.bind("candidato", candidato);
 

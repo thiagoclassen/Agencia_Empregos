@@ -39,11 +39,12 @@ public class Curriculo implements Serializable {
 
         System.out.println("Qual a carga horaria?");
         this.setCargaHoraria(keyboard.nextInt());
+        keyboard.nextLine();
 
         System.out.println("Qual o salario?");
         this.setSalario(keyboard.nextInt());
+        keyboard.nextLine();
 
-        keyboard.close();
     }
 
     public void print() {

@@ -40,20 +40,24 @@ public class Base {
 
     public ArrayList<Vaga> consultaVaga(Vaga vaga) {
         ArrayList<Vaga> temp = new ArrayList<>();
-        this.vagas.forEach((oferta) -> {
-            if (oferta.getArea().equalsIgnoreCase(vaga.getArea()) && oferta.getSalario() >= vaga.getSalario())
-                temp.add(vaga);
-        });
+        
+        for (Vaga oferta : this.vagas) {
+            if (oferta.getArea().equalsIgnoreCase(vaga.getArea())
+                    && vaga.getSalario() >= oferta.getSalario())
+                temp.add(oferta);
+        }
 
         return temp;
     }
 
-    public ArrayList<Curriculo> consultaCurriculo(String area) {
+    public ArrayList<Curriculo> consultaCurriculo(Curriculo curriculo) {
         ArrayList<Curriculo> temp = new ArrayList<>();
-        this.curriculos.forEach((curriculo) -> {
-            if (curriculo.getArea().equalsIgnoreCase(area))
-                temp.add(curriculo);
-        });
+
+        for (Curriculo candidato : this.curriculos) {
+            if (candidato.getArea().equalsIgnoreCase(curriculo.getArea())
+                    && curriculo.getSalario() >= candidato.getSalario())
+                temp.add(candidato);
+        }
 
         return temp;
     }

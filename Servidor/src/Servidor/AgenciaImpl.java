@@ -2,6 +2,7 @@ package Servidor;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.ArrayList;
 
 import Interfaces.InterfaceAgencia;
 import Interfaces.InterfaceCli;
@@ -10,9 +11,11 @@ import Objects.Vaga;
 
 public class AgenciaImpl extends UnicastRemoteObject implements InterfaceAgencia {
 
-    protected AgenciaImpl() throws RemoteException {
+    private Base base;
+
+    protected AgenciaImpl(Base base) throws RemoteException {
         super();
-        // TODO Auto-generated constructor stub
+        this.base = base;
     }
 
     private static final long serialVersionUID = 2241569544740392197L;
@@ -25,13 +28,14 @@ public class AgenciaImpl extends UnicastRemoteObject implements InterfaceAgencia
 
     @Override
     public void cadastroVagas(InterfaceCli referenciaCli, Vaga vaga) throws RemoteException {
-        // TODO Auto-generated method stub
-
+        this.base.addVaga(vaga);
+        System.out.println("Vaga cadastrada");
     }
 
     @Override
-    public void consultaCurriculos(InterfaceCli referenciaCli, Curriculo curriculo) throws RemoteException {
-        // TODO Auto-generated method stub
+    public ArrayList<Curriculo> consultaCurriculos(InterfaceCli referenciaCli, Curriculo curriculo)
+            throws RemoteException {
+        return this.base.consultaCurriculo(curriculo);
 
     }
 

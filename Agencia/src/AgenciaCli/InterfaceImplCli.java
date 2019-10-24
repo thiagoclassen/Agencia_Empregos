@@ -1,4 +1,4 @@
-package CandidatoCli;
+package AgenciaCli;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
