@@ -73,6 +73,8 @@ public class AgenciaCli {
                 break;
             case 3:
                 // receber updates
+                System.out.println("Qual a area de interesse?");
+                candRef.registrarInteresseProfissionais(referenciaCli, keyboard.nextLine());
                 break;
             case 9:
                 // sair

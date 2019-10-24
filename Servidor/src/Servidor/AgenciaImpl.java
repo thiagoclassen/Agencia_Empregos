@@ -29,6 +29,7 @@ public class AgenciaImpl extends UnicastRemoteObject implements InterfaceAgencia
     @Override
     public void cadastroVagas(InterfaceCli referenciaCli, Vaga vaga) throws RemoteException {
         this.base.addVaga(vaga);
+        this.base.notifyVagas(vaga);
         System.out.println("Vaga cadastrada");
     }
 
@@ -41,8 +42,7 @@ public class AgenciaImpl extends UnicastRemoteObject implements InterfaceAgencia
 
     @Override
     public void registrarInteresseProfissionais(InterfaceCli referenciaCli, String areaOferta) throws RemoteException {
-        // TODO Auto-generated method stub
-
+        this.base.addCandidatosSubscribers(areaOferta, referenciaCli);
     }
 
 }

@@ -29,8 +29,7 @@ public class CandidatoImpl extends UnicastRemoteObject implements InterfaceCandi
     @Override
     public void cadastroCurriculo(InterfaceCli referenciaCli, Curriculo curriculo) throws RemoteException {
         this.base.addCuriculo(curriculo);
-        System.out.println("Curriculo cadastrado");
-        referenciaCli.echo("Curriculo cadastrado:" + this.base.listCurriculos());
+        this.base.notifyCandidatos(curriculo);
     }
 
     @Override
@@ -40,8 +39,7 @@ public class CandidatoImpl extends UnicastRemoteObject implements InterfaceCandi
 
     @Override
     public void registrarInteresseVagas(InterfaceCli referenciaCli, String areaInteresse) throws RemoteException {
-        // TODO Auto-generated method stub
-
+        this.base.addVagasSubscribers(areaInteresse, referenciaCli);
     }
 
 }
