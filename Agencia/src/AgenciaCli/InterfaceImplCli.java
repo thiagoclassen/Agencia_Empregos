@@ -14,6 +14,7 @@ public class InterfaceImplCli extends UnicastRemoteObject implements InterfaceCl
 
     private static final long serialVersionUID = -2564510475347059842L;
 
+    // metodo para notificações do servidor
     @Override
     public void echo(String msg) throws RemoteException {
         System.out.println("Resposta Recebida:" + msg);

@@ -12,26 +12,27 @@ import Objects.Vaga;
 public class CandidatoCli {
     public static void main(String[] args) throws Exception {
 
-        System.setSecurityManager(null);
-
-        Registry registroServer = LocateRegistry.getRegistry(1337);
-
+        int input;
         Curriculo curriculo;
         Vaga vaga;
         Scanner keyboard = new Scanner(System.in);
 
+        // seta politicas de segurança
+        System.setSecurityManager(null);
+
+        // busca registro
+        Registry registroServer = LocateRegistry.getRegistry(1337);
+
+        // cria referencia do client
         InterfaceImplCli referenciaCli = new InterfaceImplCli();
 
+        // recebe referencia do objeto e faz cast para interface
         InterfaceCandidato candRef = (InterfaceCandidato) registroServer.lookup("candidato");
 
         System.out.println("Server Running...");
-
-        int input;
-
+        
+        // menu de interação
         do {
-
-            // System.out.print("\033[H\033[2J");
-            System.out.flush();
 
             System.out.println("Selecione a opção desejada");
             System.out.println("1 - Para Cadastrar curriculo");

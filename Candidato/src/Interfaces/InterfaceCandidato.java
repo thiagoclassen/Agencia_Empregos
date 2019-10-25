@@ -8,12 +8,13 @@ import Objects.Curriculo;
 import Objects.Vaga;
 
 public interface InterfaceCandidato extends Remote {
-    public void chamar(String msg, InterfaceCli interfaceCli) throws RemoteException;
-
+    // cadastra um novo curriculo
     public void cadastroCurriculo(InterfaceCli referenciaCli, Curriculo curriculo) throws RemoteException;
 
+    // consuta na lista de vagas
     public ArrayList<Vaga> consultaVagas(InterfaceCli referenciaCli, Vaga vaga) throws RemoteException;
 
+    // registra como subscriber para novas vagas
     public void registrarInteresseVagas(InterfaceCli referenciaCli, String areaInteresse) throws RemoteException;
 
 }

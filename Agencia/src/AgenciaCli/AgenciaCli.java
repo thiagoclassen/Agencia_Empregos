@@ -12,28 +12,27 @@ import Objects.Vaga;
 public class AgenciaCli {
     public static void main(String[] args) throws Exception {
 
-        System.setSecurityManager(null);
-
-        Registry registroServer = LocateRegistry.getRegistry(1337);
-
+        int input;
         Curriculo curriculo;
         Vaga vaga;
-        Scanner keyboard;
+        Scanner keyboard = new Scanner(System.in);
 
+        // seta politicas segurança
+        System.setSecurityManager(null);
+
+        // busca registro
+        Registry registroServer = LocateRegistry.getRegistry(1337);
+
+        // cria referencia do client
         InterfaceImplCli referenciaCli = new InterfaceImplCli();
 
+        // recebe referencia do objeto e faz cast para interface
         InterfaceAgencia candRef = (InterfaceAgencia) registroServer.lookup("agencia");
 
         System.out.println("Server Running...");
 
-        int input;
-
+        // menu de interação
         do {
-
-            keyboard = new Scanner(System.in);
-
-            // System.out.print("\033[H\033[2J");
-            System.out.flush();
 
             System.out.println("Selecione a opção desejada");
             System.out.println("1 - Para Cadastrar vaga");

@@ -15,7 +15,7 @@
             "name": "Debug (Launch)-CandidatoCli<Servidor_Candidato>",
             "request": "launch",
             "mainClass": "CandidatoCli.CandidatoCli",
-            "projectName": "Servidor_Candidato"
+            "projectName": "Servidor_HelloWorld"
         }
     ]
 }

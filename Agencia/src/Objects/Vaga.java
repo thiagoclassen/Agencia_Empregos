@@ -24,6 +24,7 @@ public class Vaga implements Serializable {
         this.salario = salario;
     }
 
+    // metodo auxiliar para preencher o objeto
     public void preencherCampos() {
 
         Scanner keyboard = new Scanner(System.in);
@@ -48,6 +49,7 @@ public class Vaga implements Serializable {
         //keyboard.close();
     }
 
+    // metodo auxiliar para imprimir o objeto
     public void print() {
         System.out.println("===========================================================");
         System.out.println("Empresa: " + this.getEmpresa());

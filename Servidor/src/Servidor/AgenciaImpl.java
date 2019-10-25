@@ -13,26 +13,22 @@ public class AgenciaImpl extends UnicastRemoteObject implements InterfaceAgencia
 
     private Base base;
 
+    // recebe construtor da implementação do Agencia, recebe a base
     protected AgenciaImpl(Base base) throws RemoteException {
         super();
-        this.base = base;
+        this.base = base; // seta referencia da base
     }
 
     private static final long serialVersionUID = 2241569544740392197L;
 
-    @Override
-    public void chamar(String msg, InterfaceCli interfaceCli) throws RemoteException {
-        System.out.println("Recebido: " + msg);
-        interfaceCli.echo(msg);
-    }
-
+    // cadastra uma nova vaga
     @Override
     public void cadastroVagas(InterfaceCli referenciaCli, Vaga vaga) throws RemoteException {
         this.base.addVaga(vaga);
-        this.base.notifyVagas(vaga);
-        System.out.println("Vaga cadastrada");
+        this.base.notifyVagas(vaga); // inicia processo de notificação
     }
 
+    // consulta curriculos
     @Override
     public ArrayList<Curriculo> consultaCurriculos(InterfaceCli referenciaCli, Curriculo curriculo)
             throws RemoteException {
@@ -40,6 +36,7 @@ public class AgenciaImpl extends UnicastRemoteObject implements InterfaceAgencia
 
     }
 
+    // subscribe para novos candidatos
     @Override
     public void registrarInteresseProfissionais(InterfaceCli referenciaCli, String areaOferta) throws RemoteException {
         this.base.addCandidatosSubscribers(areaOferta, referenciaCli);
